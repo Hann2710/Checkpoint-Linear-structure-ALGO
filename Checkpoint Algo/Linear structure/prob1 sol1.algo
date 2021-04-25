@@ -1,0 +1,25 @@
+// Problem 1 solution 1 
+ALGORITHM repitition
+VAR
+set1, set2 : ARRAY_OF INTEGER[50];
+i, j : INTEGER;
+sum : INTEGER := 0;
+
+BEGIN
+
+FOR i FROM 0 TO set1.length-1  DO
+    IF (set1[i] in set2) THEN
+        BREAK;
+    ELSE 
+        sum := sum + set1[i]
+    END_IF
+END_FOR
+FOR j FROM 0 TO set2.length-1  DO
+    IF (set2[j] in set1) THEN
+        BREAK;
+    ELSE
+        sum:= sum + set2 [j]
+    END_IF
+END_FOR
+write (sum);
+END

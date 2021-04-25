@@ -1,0 +1,20 @@
+// Problem 2 solution 1 
+ALGORITHM repitition
+VAR
+set1, set2 : ARRAY_OF INTEGER[20];
+i : INTEGER;
+sum : INTEGER := 0;
+
+BEGIN
+
+FOR i FROM 0 TO set1.length-1  DO
+    IF (set1[i] in set2) THEN
+       sum := sum + 2*set1[i]
+    ELSE
+    BREAK; 
+        
+    END_IF
+END_FOR
+write (sum);
+
+END

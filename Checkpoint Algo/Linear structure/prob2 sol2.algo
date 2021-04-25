@@ -1,0 +1,39 @@
+ALGORITHM repitition
+VAR
+set1, set2 : ARRAY_OF INTEGER[50];
+i, j : INTEGER;
+sum : INTEGER := 0;
+count : INTEGER := 1; 
+htab : HASH_TABLE<INTEGER,INTEGER>;
+BEGIN
+
+set := set1 + set2 ; 
+FOR i FROM 0 TO set1.length-1  DO
+    IF (set1[i] in set2) THEN
+        count := count +1;
+        htab.insert(set1[i], count);
+    ELSE 
+        htab.insert(set1[i], count);
+    END_IF
+END_FOR
+FOR i FROM 0 TO set.length-1 DO
+    FOR j FROM i+1 TO set.length-1 DO   
+        IF (set[i] := set [j]) THEN
+            count := 2;
+            htab.insert(set[i], count);
+            set[j] := set[j+1];
+            j := j+1; 
+        ELSE
+           htab.insert(set[i], count);
+        END_IF    
+        END_IF
+    END_FOR
+END_FOR
+FOR i FROM 0 TO htab.length-1 STEP step  DO
+    IF (htab.get(set [i]) := 2) THEN
+        sum := sum + 2*set[i]
+    END_IF
+END_FOR
+write (sum);
+
+END
